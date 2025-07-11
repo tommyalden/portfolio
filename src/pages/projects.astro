@@ -1,0 +1,41 @@
+---
+import Layout from '@/layouts/Default.astro';
+import { FaBlog, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+---
+
+<Layout title="projects | tommy alden">
+    <main class="flex flex-col justify-between gap-8 p-8 md:p-16">
+        <section class="flex flex-col gap-8 justify-center">
+            <h1 class="text-5xl md:text-8xl font-bold">projects</h1>
+            <h2 class="text-xl md:text-3xl font-light">my work and experiments.</h2>
+
+            <hr class="border-neutral-800 " aria-hidden="true">
+
+            <div class="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4">
+                <div class="flex flex-col gap-2 p-4 lg:p-6 hover:shadow-md hover:backdrop-blur-xl transition">
+                    <h3 class="text-lg font-semibold underline">portfolio site</h3>
+                    <p class="text-xs -mt-2">stack: astro · tailwind · shadcn</p>
+                    <p>a personal site showcasing my work and abilities, the site you are currently viewing.</p>
+                    <p>made to experiment with astro and showcase my skills.</p>
+                    <div class="flex gap-2 mt-2 justify-end">
+                        <a href="/posts/portfolio-creation" title="Blog Post"><FaBlog className="w-5 h-5" aria-label="Blog Post"/></a>
+                        <a href="https://github.com/tommyalden/portfolio" title="GitHub Repo"><FaGithub className="w-5 h-5" aria-label="GitHub Logo"/></a>
+                        <a href="https://tommyalden.dev" title="Live Site"><FaExternalLinkAlt className="w-5 h-5" aria-label="Open Live Site"/></a>
+                    </div>
+                </div>
+
+                <div class="my-2 sm:my-0 sm:py-2 border-t-1 sm:border-t-0 sm:border-r-1 sm:w-min border-neutral-600"></div>
+
+                <div class="flex flex-col gap-2 p-4 lg:p-6 hover:shadow-md hover:backdrop-blur-xl transition">
+                    <h3 class="text-lg font-semibold underline">randomchat</h3>
+                    <p class="text-xs -mt-2">stack: nextjs · shadcn · socket.io</p>
+                    <p>a simple chat web app pairing users up in random groups of 4.</p>
+                    <p>created as a proof-of-concept and to explore real-time communication and websockets.</p>
+                    <div class="flex gap-2 mt-2 justify-end">
+                        <a href="https://github.com/tommyalden/random-chat" title="GitHub Repo"><FaGithub className="w-5 h-5" aria-label="GitHub Logo"/></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>

@@ -1,0 +1,40 @@
+---
+import Footer from '@/components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+	footerFixed?: boolean;
+}
+
+const { title, description, footerFixed } = Astro.props
+---
+
+<!doctype html>
+<html lang="en" class="overscroll-none min-h-screen">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description || title}>
+		<title>{title}</title>
+	</head>
+	<body class="relative flex flex-col min-h-screen">
+		<Header />
+		<div class="flex-grow">
+			<slot>
+		</div>
+		<Footer fixed={footerFixed} />
+		<div class="background absolute inset-0 left-0 w-full h-full -z-10"></div>
+
+	</body>
+</html>
+
+<style>
+	html {
+		margin: 0;
+		width: 100%;
+		min-height: 100%;
+	}
+</style>

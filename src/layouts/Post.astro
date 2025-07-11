@@ -1,0 +1,32 @@
+---
+import Prose from "@/components/Prose.astro";
+import Layout from "@/layouts/Default.astro";
+import { FaClock, FaRegClock } from "react-icons/fa";
+
+export interface BlogFrontmatter {
+    title: string;
+    date: string;
+    description: string;
+    slug: string;
+    readtime: number; // in seconds
+}
+
+interface Props {
+    frontmatter: BlogFrontmatter;
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title + " | tommy alden"}>
+    <main class="flex flex-col justify-between gap-4 p-8 md:p-16 items-center">
+        <Prose>
+            <h1 class="text-3xl sm:text-4xl font-bold underline">{frontmatter.title}</h1>
+            <div class="flex justify-between text-sm sm:text-base -mt-8">
+                <p class="text-sm">Posted on {new Date(frontmatter.date).toLocaleDateString()}</p>
+                <div class="flex gap-1 items-center -mt-2"><FaRegClock /> {Math.round(frontmatter.readtime / 60)} min read</div>
+            </div>
+            <slot />
+        </Prose>
+    </main>
+</Layout>

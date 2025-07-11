@@ -1,0 +1,31 @@
+---
+import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa"
+import { SiAstro, SiTailwindcss, SiShadcnui } from "react-icons/si"
+
+type Props = {
+    fixed?: boolean;
+}
+
+const { fixed } = Astro.props;
+---
+
+<footer class={'w-full px-6 py-3 flex items-center justify-between ' + (fixed ? 'sticky bottom-0 backdrop-blur-3xl' : '')}>
+    <div class="flex justify-center items-center gap-2">
+        <p class="text-sm font-light">built with</p>
+        <a href="https://astro.build/">
+            <SiAstro className="text-black" aria-label="Astro Logo"/>
+        </a>
+        <a href="https://tailwindcss.com/">
+            <SiTailwindcss className="text-black" aria-label="Tailwind CSS Logo"/>
+        </a>
+        <a href="https://ui.shadcn.com">
+            <SiShadcnui className="text-black" aria-label="ShadCN UI Logo"/>
+        </a>
+    </div>
+
+    <div class="flex gap-2 items-center">
+        <a href="https://github.com/tommyalden" target="_blank" rel="noopener noreferrer"><FaGithub className="w-6 h-6" aria-label="GitHub Logo" /></a>
+        <a href="https://linkedin.com/in/tommy-alden" target="_blank" rel="noopener noreferrer"><FaLinkedin className="w-6 h-6" aria-label="LinkedIn Logo" /></a>
+        <a href="https://twitter.com/talden_" target="_blank" rel="noopener noreferrer"><FaTwitter className="w-6 h-6" aria-label="Twitter Logo" /></a>
+    </div>
+</footer>

@@ -1,0 +1,40 @@
+---
+import Layout from "@/layouts/Default.astro"
+import type { BlogFrontmatter } from "@/layouts/Post.astro";
+import type { MarkdownInstance } from "astro";
+import { FaRegClock } from "react-icons/fa";
+
+const blogPosts = Object.values(await import.meta.glob<MarkdownInstance<BlogFrontmatter>>('./posts/*.mdx', { eager: true })).sort((a, b) => {
+    return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
+});
+---
+
+<Layout title="tommy alden | blog" footerFixed={true}>
+    <main class="flex flex-col justify-between gap-8 p-8 md:p-16">
+        <section class="flex flex-col gap-8 justify-center">
+            <h1 class="text-5xl md:text-8xl font-bold">blog</h1>
+            <h2 class="text-xl md:text-3xl font-light">here's where i write up the cool stuff i do and learn.</h2>
+
+            <div class="flex flex-col flex-grow h-max">
+                {blogPosts.map((post, index) => (
+                    <div>
+                        <a href={`/posts/${post.frontmatter.slug}`} class="hover:cursor-pointer">
+                            <div class="flex flex-col gap-2 p-4 lg:p-6 hover:shadow-md hover:backdrop-blur-xl transition my-4">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-xl font-semibold underline">{post.frontmatter.title}</h3>
+                                    <div class="flex gap-1 items-center -mt-2 text-sm"><FaRegClock /> {Math.round(post.frontmatter.readtime / 60)} min read</div>
+                                </div>
+
+                                <p class="text-xs -mt-2">Posted on {new Date(post.frontmatter.date).toLocaleDateString()}</p>
+                                <p>{post.frontmatter.description}</p>
+                            </div>
+                        </a>
+                        {index < blogPosts.length - 1 && <hr aria-hidden="true" />}
+                    </div>
+                ))}
+            </div>
+
+            <p class="font-light text-sm sm:text-base">whilst some of the code for this website was assisted by ai, none of these posts were.</p>
+        </section>
+    </main>
+</Layout>

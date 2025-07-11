@@ -1,0 +1,46 @@
+---
+layout: ../../layouts/Post.astro
+title: "creating my portfolio site"
+description: "an overview of how i made this portfolio website and the important decisions i made"
+date: 2025-07-11
+readtime: 175
+slug: portfolio-creation
+---
+
+welcome to my portfolio site, hope you've enjoyed your visit so far. hopefully this post is able to explain the background behind this website and why i made certain design and technical decisions.
+
+### background
+
+after finishing sixth form, i decided it was time to finally make the portfolio website i had planned to make for several years at that point. partly because i knew it would be a potential leg up for the future, but also as i needed something to do over summer.
+
+as mentioned on the homepage, i've been "coding" websites (whether html is real code or just markup is a discussion for another post) since i was about 11 years old, so i've got an ok grasp of the process & toolset. which leads nicely onto the next section...
+
+### the stack
+
+immediately i knew i wanted to experiment with [astro](https://astro.build) for this project, it's a framework that was super fresh the last time i was really into web dev. it seemed cool and fast so i knew i wanted to try it out.
+
+as astro is ui-agnostic, i also immediately knew i'd use [react](https://react.dev). i was **very** tempted by the thought of trying out [svelte](https://svelte.dev) or [vue](https://vuejs.org) as i haven't used them before. but as this site is almost entirely static, i thought it was best to stick with what i know.
+
+sticking with the theme of what i know, [tailwind](https://tailwindcss.com) was a no-brainer. i used to hate styling stuff with css and then sass, but then discovered tailwind which somehow made styling (almost) pleasant. i had also heard some stuff about a component framework called [shadcn/ui](https://ui.shadcn.com), so thought i'd try and squeeze it into this project somehow.
+
+### actually making the site
+
+with the stack finalised, i was able to begin actually making the website. during the other times i attempted to make a portfolio site, i started off by creating a mockup in figma. however, this time i thought i would just start coding and see where it led me.
+
+i worked on the header first, during which i settled on satoshi as the font after a bit of research and testing. there's no specific reasoning, i just thought it looks cool. the header took me quite a fair bit of time as this has been the first major web project i've done in a while, so was having to refresh my memory of stuff frequently.
+
+after the header, the rest of the site started coming together quickly. once i had all the content added to the index page, i focused on styling. i really enjoy the look of mesh gradients, so decided to use one for the backdrop. i used [mshr](https://mshr.app) to generate the gradient after experimenting with a variety.
+
+#### icons
+
+the icons used in the header and footer ended up actually being easy to install and use, however initially i was using [lucide](https://lucide.dev) for the icons. i really liked the look of their icons and assumed it would have all that i would need.
+
+however, when i started to make the site footer i needed some brand icons. unfortunately lucide has deprecated all brand icons recommending [simple-icons](https://simpleicons.org) for brand icons, so i installed simple-icons. simple-icons had all the icons i needed, except linkedin...
+
+whilst researching for a third icon library with a linkedin icon, i stumbled across [react-icons](https://react-icons.github.io/react-icons/) which solved all my problems by providing a bunch of different icon sets. after a bit of refactoring (and typescript shenanigans), my icon dilemma was over.
+
+### overview
+
+overall, this site turned out a lot better than i initially anticipated. considering i went in with no idea of what design i wanted, i'm incredibly pleased with the end result.
+
+technically, it was a great way of finding my feet in web dev again and having a tinker with astro. 

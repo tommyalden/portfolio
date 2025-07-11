@@ -1,11 +1,80 @@
----
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+	---
+	import { Button } from "@/components/ui/button"
+	import Layout from "@/layouts/Default.astro"
+	import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
+	---
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
+	<Layout title="tommy alden | developer & cs student">
+		<main class="flex flex-col justify-between gap-8 p-8 md:p-16">
+			<section class="flex flex-col gap-4 items-center justify-center text-center my-16 sm:my-32">
+				<h1 class="text-5xl md:text-8xl font-bold">i write code.</h1>
+				<h2 class="text-xl md:text-3xl font-light"></h2>
+				<div class="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mt-4">
+				<a href="/projects" title="View Projects">
+					<Button className="min-w-[160px] hover:cursor-pointer" size="lg">view projects</Button>
+				</a>
+				<a href="/#contact" title="Contact Info">
+					<Button className="min-w-[160px] text-base hover:cursor-pointer" size="lg">contact me</Button>
+				</a>
+			</section>
 
-<Layout>
-	<Welcome />
-</Layout>
+			<hr class="border-neutral-800" aria-hidden="true">
+
+			<section class="flex flex-col gap-2 text-sm sm:text-base">
+				<h2 class="font-semibold text-xl underline">about</h2>
+				<p class="text-base font-medium sm:text-lg">hey, i'm tommy — a first-year cs student at bristol uni.</p>
+				<p>
+					i started writing code at 11 and have been experimenting ever since. 
+					these days, i’m mostly focused on my studies and building interesting things that (usually) don’t break. 
+					the best of them are featured here — whether they're useful or not is up to you to decide.
+				</p>
+				<p>
+					over the years i've experimented with a range of platforms and frameworks — mostly building full-stack web apps and jvm stuff (i'm a big fan of kotlin).
+					outside of my solo projects, i also led a small team to build a proof-of-concept app for spirent communications — as part of a sixth-form project.
+				</p>
+				<p>
+					when i'm not doing anything cs related you'll probably find me browsing some random wikipedia article or hanging out with my friends.
+				</p>
+			</section>
+
+			<hr class="border-neutral-800" aria-hidden="true">
+
+			<section class="flex flex-col gap-2 text-sm sm:text-base">
+				<h2 class="font-semibold text-xl underline">featured projects</h2>
+				<p class="text-base sm:text-lg ">here are some of my favourite projects i've worked on:</p>
+
+				<div class="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4">
+					<div class="flex flex-col gap-2 p-4 lg:p-6 hover:shadow-md hover:backdrop-blur-xl transition">
+						<h3 class="text-lg font-semibold underline">portfolio site</h3>
+						<p class="text-xs -mt-2">stack: astro · tailwind · shadcn</p>
+						<p>a personal site showcasing my work and abilities, the site you are currently viewing.</p>
+						<p>made to experiment with astro and showcase my skills.</p>
+						<div class="flex gap-2 mt-2 justify-end">
+							<a href="https://github.com/tommyalden/portfolio" title="GitHub Repo"><FaGithub className="w-5 h-5" aria-label="GitHub Logo"/></a>
+							<a href="https://tommyalden.dev" title="Live Site"><FaExternalLinkAlt className="w-5 h-5" aria-label="Open Live Site"/></a>
+						</div>
+					</div>
+
+					<div class="my-2 sm:my-0 sm:py-2 border-t-1 sm:border-t-0 sm:border-r-1 sm:w-min border-neutral-600"></div>
+
+					<div class="flex flex-col gap-2 p-4 lg:p-6 hover:shadow-md hover:backdrop-blur-xl transition">
+						<h3 class="text-lg font-semibold underline">randomchat</h3>
+						<p class="text-xs -mt-2">stack: nextjs · shadcn · socket.io</p>
+						<p>a simple chat web app pairing users up in random groups of 4.</p>
+						<p>created as a proof-of-concept and to explore real-time communication and websockets.</p>
+						<div class="flex gap-2 mt-2 justify-end">
+							<a href="https://github.com/tommyalden/random-chat" title="GitHub Repo"><FaGithub className="w-5 h-5" aria-label="GitHub Logo"/></a>
+						</div>
+					</div>		
+				</div>
+			</section>
+
+			<hr class="border-neutral-800" aria-hidden="true">
+
+			<section class="flex flex-col gap-2 text-sm sm:text-base" id="contact">
+				<h2 class="font-semibold text-xl underline">contact</h2>
+				<p>  if you’d like to get in touch — whether it’s about a project, a job opportunity, or just to say hi — you can reach me on twitter, linkedin, or by email at <a href="mailto:tommy@tommyalden.dev">tommy@tommyalden.dev</a></p>
+				<p>i'm always open to new opportunities and collaborations, so don't hesitate to reach out!</p>
+			</section>
+		</main>
+	</Layout>
