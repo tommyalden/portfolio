@@ -18,6 +18,25 @@ const { title, description, footerFixed } = Astro.props
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description || title}>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="referrer" content="no-referrer-when-downgrade">
+		
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="tommyalden" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://tommyalden.dev/">
+		<meta property="og:title" content={title}>"
+		<meta property="og:site_name" content="tommyalden">
+		<meta property="og:description" content="my personal portfolio site, hopefully interesting to other people.">
+
+		<script defer src="https://cloud.umami.is/script.js" data-website-id="3cf51de3-ca5d-4185-8e59-384b4064140b"></script>
+
 		<title>{title}</title>
 	</head>
 	<body class="relative flex flex-col min-h-screen">
